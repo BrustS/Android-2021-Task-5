@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_graph"
+    app:startDestination="@id/catsFragment">
+
+    <fragment
+        android:id="@+id/catsFragment"
+        android:name="by.brust.task_5_cats.ui.CatsFragment"
+        android:label="cats_fragment"
+        tools:layout="@layout/cats_fragment" >
+        <action
+            android:id="@+id/action_catsFragment_to_detailCatFragment"
+            app:destination="@id/detailCatFragment"
+            app:enterAnim="@anim/cardflip_enter"
+            app:exitAnim="@anim/cardflip_exit"
+            app:popEnterAnim="@anim/cardflip_pop_enter"
+            app:popExitAnim="@anim/cardflip_pop_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailCatFragment"
+        android:name="by.brust.task_5_cats.ui.DetailCatFragment"
+        android:label="detail_cat_fragment"
+        tools:layout="@layout/detail_cat_fragment">
+        <argument
+            android:name="image"
+            app:argType="by.brust.task_5_cats.data.Cat" />
+    </fragment>
+</navigation>
